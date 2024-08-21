@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shwetha's Projects</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0; /* Light gray background */
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            background-color: #4e342e; /* Brown color for header */
+            color: white;
+            padding: 20px 0;
+        }
+
+        /* Project Section */
+        .project-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .project {
+            background-color: #d7ccc8; /* Light brown color for project containers */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Start as invisible */
+            transform: translateY(20px); /* Start below */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for opacity and transform */
+        }
+
+        .project.visible {
+            opacity: 1; /* Fade in */
+            transform: translateY(0); /* Slide up */
+        }
+
+        .project h2 {
+            margin-top: 0;
+            color: #4e342e; /* Darker brown for headings */
+        }
+
+        .project p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My Projects</h1>
+    </div>
+    <div class="project-section">
+        <!-- Currency Exchange Rate Notification System -->
+        <div class="project">
+            <h2>Currency Exchange Rate Notification System</h2>
+            <p>The Currency Exchange Rate Notification System provides real-time updates on currency fluctuations and alerts users when exchange rates reach specified thresholds. This system helps users make timely and informed decisions based on current market conditions.</p>
+        </div>
+
+        <!-- Web Vulnerability Scanner -->
+        <div class="project">
+            <h2>Web Vulnerability Scanner</h2>
+            <p>The Web Vulnerability Scanner identifies and reports potential security weaknesses in web applications. It helps developers to pinpoint vulnerabilities and enhance the security of their online systems.</p>
+        </div>
+
+        <!-- Website Forecast System -->
+        <div class="project">
+            <h2>Website Forecast System</h2>
+            <p>This system provides real-time weather forecasts by integrating with a weather API. It displays current conditions, forecasts, and weather trends for any location, helping users plan their activities effectively.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to add the "visible" class for animation
+        document.addEventListener("DOMContentLoaded", function() {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach((project, index) => {
+                setTimeout(() => {
+                    project.classList.add('visible');
+                }, 100 * index); // Staggered effect
+            });
+        });
+    </script>
+</body>
+</html>
